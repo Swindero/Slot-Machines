@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        View overlay = findViewById(R.id.layout);
+        overlay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         button = (Button)findViewById(R.id.button);
 
@@ -37,15 +39,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for(i=0;i<15;i++) {
-            ecranul.add(ObjectAnimator.ofFloat(image.get(i), "translationY",  0, 2280));
+            ecranul.add(ObjectAnimator.ofFloat(image.get(i), "translationY",  0, 2800));
             ecranul.get(i).setDuration(1000);
-            cascada.add(ObjectAnimator.ofFloat(image.get(i+15), "translationY", -2280, 0));
+            cascada.add(ObjectAnimator.ofFloat(image.get(i+15), "translationY", -2800, 0));
             cascada.get(i).setDuration(1000);
-            cascada1.add(ObjectAnimator.ofFloat(image.get(i+30), "translationY", -1710, 570));
+            cascada1.add(ObjectAnimator.ofFloat(image.get(i+30), "translationY", -2100, 700));
             cascada1.get(i).setDuration(1000);
-            cascada2.add(ObjectAnimator.ofFloat(image.get(i+45), "translationY", -1140, 1140));
+            cascada2.add(ObjectAnimator.ofFloat(image.get(i+45), "translationY", -1400, 1400));
             cascada2.get(i).setDuration(1000);
-            cascada3.add(ObjectAnimator.ofFloat(image.get(i+60), "translationY", -570, 1710));
+            cascada3.add(ObjectAnimator.ofFloat(image.get(i+60), "translationY", -700, 2100));
             cascada3.get(i).setDuration(1000);
         }
 
